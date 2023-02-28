@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[MainController::class,'index']);
+
+Route::get('/category/{slug}',[MainController::class,'categoryPosts']);
+
+Route::get('/posts/{slug}',[MainController::class,'postDetail']);
+
+Route::get('/contact',[MainController::class,'contact']);
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
