@@ -8,7 +8,10 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown active">
-                <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+                <a href="{{route('admin.dashboard')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+            </li>
+            <li class="dropdown active">
+                <a href="{{route('admin.categories.index')}}" class="nav-link"><i data-feather="monitor"></i><span>Categories</span></a>
             </li>
         </ul>
     </aside>
