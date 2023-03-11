@@ -7,12 +7,17 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
-            <li class="dropdown active">
+            <li class="dropdown">
                 <a href="{{route('admin.dashboard')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
-            <li class="dropdown active">
+            <li class="dropdown">
                 <a href="{{route('admin.categories.index')}}" class="nav-link"><i data-feather="monitor"></i><span>Categories</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="{{route('admin.posts.index')}}" class="nav-link"><i data-feather="monitor"></i><span>Posts</span></a>
             </li>
         </ul>
     </aside>
 </div>
+
+

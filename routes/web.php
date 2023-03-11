@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\CategoriesController;
-
+use App\Http\Controllers\Admin\PostsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +26,7 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function (){
         return view('admin.dashboard');
     })->name('dashboard');
     Route::resource('categories',CategoriesController::class);
+    Route::resource('posts',PostsController::class);
 });
 
 Route::middleware('auth')->group(function () {

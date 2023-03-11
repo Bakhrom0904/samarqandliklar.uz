@@ -15,6 +15,7 @@
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="/admin/assets/css/custom.css">
     <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+    @yield('css')
 </head>
 
 <body>
@@ -203,6 +204,7 @@
 <script src="/admin/assets/js/scripts.js"></script>
 <!-- Custom JS File -->
 <script src="/admin/assets/js/custom.js"></script>
+@yield('js')
 </body>
 
 
