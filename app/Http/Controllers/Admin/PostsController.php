@@ -70,9 +70,10 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        $categories=Category::all();
+        return view('admin.posts.edit',compact('post','categories'));
     }
 
     /**
@@ -82,9 +83,19 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $requestData=$request->all();
+        if($request->hasFile('image'))
+        {
+            $file=$request->file('image');
+            $image_name=time().'.'.$file->getClientOriginalExtension();
+            $file->move('site/images/posts/',$image_name);
+            $requestData['image']=$image_name;
+        }
+        $requestData['slug']=Str::slug($request->title_ru);
+        $post->update($requestData);
+        return redirect()->route('admin.posts.index')->with('success','Post updated successfully');
     }
 
     /**
