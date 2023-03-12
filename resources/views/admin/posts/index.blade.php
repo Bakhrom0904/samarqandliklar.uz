@@ -42,8 +42,13 @@
                                         <img alt="image" src="/site/images/posts/{{$post->image}}" width="35">
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-info">Detail</a>
+                                        <a href="{{route('admin.posts.show',$post->id)}}" class="btn btn-info">Detail</a>
                                         <a href="{{route('admin.posts.edit',$post->id)}}" class="btn btn-primary">Edit</a>
+                                        <form action="{{route('admin.posts.destroy',$post->id)}}" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Confirm delete')">
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

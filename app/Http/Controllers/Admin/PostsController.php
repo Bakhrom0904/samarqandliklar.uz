@@ -59,9 +59,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        return view('admin.posts.show',compact('post'));
     }
 
     /**
@@ -106,6 +106,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post=Post::destroy($id);
+        return redirect()->route('admin.posts.index')->with('success','Post deleted successfully');
+
     }
 }
