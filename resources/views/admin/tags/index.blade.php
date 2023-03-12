@@ -16,9 +16,9 @@
                     </div>
                 @endif
                 <div class="card-header">
-                    <h4>Posts</h4>
+                    <h4>Tags</h4>
                     <div class="card-header-form">
-                        <a href="{{route('admin.posts.create')}}" class="btn btn-primary">Create</a>
+                        <a href="{{route('admin.tags.create')}}" class="btn btn-primary">Create</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -26,25 +26,23 @@
                         <table class="table table-striped" id="table-1">
                             <thead>
                             <tr>
-                                <th>T/R</th>
-                                <th>Title</th>
-                                <th>Category</th>
-                                <th>Image</th>
+                                <th>#</th>
+                                <th>Name (UZ)</th>
+                                <th>Name (RU)</th>
+                                <th>Slug</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($posts as $post)
+                            @foreach($tags as $tag)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{$post->title_uz}}</td>
-                                    <td>{{$post->category_id}}</td>
+                                    <td>{{$tag->name_uz}}</td>
+                                    <td>{{$tag->name_ru}}</td>
+                                    <td>{{$tag->slug}}</td>
                                     <td>
-                                        <img alt="image" src="/site/images/posts/{{$post->image}}" width="35">
-                                    </td>
-                                    <td>
-                                        <a href="{{route('admin.posts.show',$post->id)}}" class="btn btn-info">Detail</a>
-                                        <a href="{{route('admin.posts.edit',$post->id)}}" class="btn btn-primary">Edit</a>
-                                        <form action="{{route('admin.posts.destroy',$post->id)}}" method="POST">
+                                        <a href="{{route('admin.tags.edit',$tag->id)}}" class="btn btn-primary">Edit</a>
+                                        <form action="{{route('admin.tags.destroy',$tag->id)}}" method="POST">
                                             @method('DELETE')
                                             @csrf
                                             <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Confirm delete')">
@@ -56,11 +54,11 @@
                         </table>
                     </div>
                 </div>
-{{--                <div class="card-footer text-right">--}}
-{{--                    <nav class="d-inline-block">--}}
-{{--                        {{$categories->links()}}--}}
-{{--                    </nav>--}}
-{{--                </div>--}}
+                {{--                <div class="card-footer text-right">--}}
+                {{--                    <nav class="d-inline-block">--}}
+                {{--                        {{$categories->links()}}--}}
+                {{--                    </nav>--}}
+                {{--                </div>--}}
             </div>
         </div>
     </div>

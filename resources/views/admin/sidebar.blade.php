@@ -16,6 +16,9 @@
             <li class="dropdown">
                 <a href="{{route('admin.posts.index')}}" class="nav-link"><i data-feather="monitor"></i><span>Posts</span></a>
             </li>
+            <li class="dropdown">
+                <a href="{{route('admin.tags.index')}}" class="nav-link"><i data-feather="monitor"></i><span>Tags</span></a>
+            </li>
         </ul>
     </aside>
 </div>
