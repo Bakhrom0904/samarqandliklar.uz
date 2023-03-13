@@ -5,6 +5,9 @@
     Create Post
 
 @endsection
+@section('css')
+    <link rel="stylesheet" href="/admin/assets/bundles/select2/dist/css/select2.min.css">
+@endsection
 
 @section('content')
     <div class="row">
@@ -48,6 +51,15 @@
                             </select>
                             <input type="text" name="slug" class="form-control">
                         </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label>Tags</label>--}}
+{{--                            <select id="" class="form-control select2" name="tags[]" multiple>--}}
+{{--                                @foreach($tags as $tag)--}}
+{{--                                    <option @if(in_array($tag->id,$post->tags->pluck('id')->toArray())) selected @endif  value="{{$tag->id}}">{{$tag->name_uz}}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                            <input type="text" name="slug" class="form-control">--}}
+{{--                        </div>--}}
                     </div>
                     <div class="card-footer text-right">
                         <button class="btn btn-primary mr-1" type="submit">Submit</button>
@@ -64,4 +76,5 @@
         $('.ckeditor').ckeditor();
         // $('.textarea').ckeditor(); // if class is prefered.
     </script>
+    <script src="/admin/assets/bundles/select2/dist/js/select2.full.min.js"></script>
 @endsection

@@ -5,6 +5,9 @@
     Create Post
 
 @endsection
+@section('css')
+    <link rel="stylesheet" href="/admin/assets/bundles/select2/dist/css/select2.min.css">
+@endsection
 
 @section('content')
     <div class="row">
@@ -39,9 +42,18 @@
                         <div class="form-group">
                             <label>Category</label>
                             <select id="" class="form-control" name="category_id">
-                                <option ">Select category</option>
+                                <option >Select category</option>
                                 @foreach($categories as $category)
                                     <option value="{{$category->id}}">{{$category->name_uz}}</option>
+                                @endforeach
+                            </select>
+                            <input type="text" name="slug" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <select id="" class="form-control select2" name="tags[]" multiple>
+                                @foreach($tags as $tag)
+                                    <option value="{{$tag->id}}">{{$tag->name_uz}}</option>
                                 @endforeach
                             </select>
                             <input type="text" name="slug" class="form-control">
@@ -62,4 +74,5 @@
         $('.ckeditor').ckeditor();
         // $('.textarea').ckeditor(); // if class is prefered.
     </script>
+<script src="/admin/assets/bundles/select2/dist/js/select2.full.min.js"></script>
 @endsection

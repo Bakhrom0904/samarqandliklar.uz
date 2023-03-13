@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Str;
 
@@ -29,7 +30,8 @@ class PostsController extends Controller
     public function create()
     {
         $categories=Category::all();
-        return view('admin.posts.create',compact('categories'));
+        $tags=Tag::all();
+        return view('admin.posts.create',compact('categories','tags'));
     }
 
     /**
@@ -49,7 +51,8 @@ class PostsController extends Controller
             $requestData['image']=$image_name;
         }
         $requestData['slug']=Str::slug($request->title_ru);
-        Post::create($requestData);
+        $post=Post::create($requestData);
+        $post->tags()->attach($request->tags);
         return redirect()->route('admin.posts.index')->with('success','Post created successfully');
     }
 
@@ -73,7 +76,8 @@ class PostsController extends Controller
     public function edit(Post $post)
     {
         $categories=Category::all();
-        return view('admin.posts.edit',compact('post','categories'));
+        $tags=Tag::all();
+        return view('admin.posts.edit',compact('post','categories','tags'));
     }
 
     /**
@@ -95,6 +99,7 @@ class PostsController extends Controller
         }
         $requestData['slug']=Str::slug($request->title_ru);
         $post->update($requestData);
+//        $post->tags()->sync($request->tags);
         return redirect()->route('admin.posts.index')->with('success','Post updated successfully');
     }
 

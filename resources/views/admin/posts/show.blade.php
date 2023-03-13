@@ -30,6 +30,11 @@
                                 <th>Category</th><td>{!! $post->category->name_uz !!}</td>
                             </tr>
                             <tr>
+                                <th>Tags</th><td>@foreach($post->tags as $tag)
+                                        {{$tag->name_uz}},
+                                @endforeach</td>
+                            </tr>
+                            <tr>
                                 <th>Image</th><td><img src="/site/images/posts/{{$post->image}}" alt="rasm" width="150"></td>
                             </tr>
                         </table>
