@@ -17,6 +17,11 @@ use App\Http\Controllers\Admin\TagsController;
 |
 */
 
+Route::get('/lang/{lang}', function ($lang) {
+    session(['lang'=>$lang]);
+    return back();
+});
+
 Route::get('/',[MainController::class,'index']);
 Route::get('/category/{slug}',[MainController::class,'categoryPosts']);
 Route::get('/posts/{slug}',[MainController::class,'postDetail']);

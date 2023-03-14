@@ -35,13 +35,20 @@
                         <button type="submit" class="btn search-btn"></button>
                     </form>
                     <div class="languages">
-                        <button type="button" class="btn language__option language__option--active">РУ</button>
+                        @if(\App::getLocale()=='ru')
+                            <a href="#" class="btn language__option language__option--active">РУ</a>
+                            <div class="languages__list">
+                                <a href="/lang/uz" class="btn language__option language__option--uz" data-status="disabled">UZ</a>
+                            </div>
+                            @else
+                                <a href="#" class="btn language__option language__option--uz">UZ</a>
                         <div class="languages__list">
-                            <button type="button" class="btn language__option language__option--uz" data-status="disabled">UZ</button>
+                            <a href="/lang/ru" class="btn language__option language__option--active" data-status="disabled">РУ</a>
                         </div>
+                        @endif
                     </div>
                     <div class="telegram-join basic-flex">
-                        <a href="#"><img src="/img/tg.png" alt="Telegram">Подписатся</a>
+                        <a href="#"><img src="/img/tg.png" alt="Telegram">Подписатся {{\App::getLocale()}}</a>
                     </div>
                 </div>
             </div>
