@@ -13,7 +13,7 @@
                 <div class="card-header">
                     <h4>Categories</h4>
                     <div class="card-header-form">
-                        <a href="{{route('admin.categories.create')}}" class="btn btn-primary">Add</a>
+                        <a href="{{route('admin.categories.create')}}" class="btn btn-primary">Create</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -28,12 +28,12 @@
                             </tr>
                             @foreach($categories as $category)
                                 <tr>
-                                    <td>{{$category->id}}</td>
+                                    <td>{{$loop->iteration}}</td>
                                     <td>{{$category->name_uz}}</td>
                                     <td>{{$category->slug}}</td>
-                                    <td><a href="{{route('admin.categories.edit',$category->id)}}" class="btn btn-info">Update</a></td>
-                                    <td><a href="{{route('admin.categories.show',$category->id)}}" class="btn btn-info">View</a></td>
                                     <td>
+                                        <a href="{{route('admin.categories.edit',$category->id)}}" class="btn btn-info">Update</a>
+                                        <a href="{{route('admin.categories.show',$category->id)}}" class="btn btn-info">View</a>
                                         <form action="{{route('admin.categories.destroy',$category->id)}}" method="POST">
                                             @method('DELETE')
                                             @csrf
