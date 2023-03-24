@@ -30,8 +30,8 @@
                     <div class="currency"><span>E</span><span>10988.72</span></div>
                 </div>
                 <div class="header__actions basic-flex">
-                    <form method="GET" class="search-form basic-flex">
-                        <input type="search" class="search-input">
+                    <form method="GET" action="{{route('search')}}" class="search-form basic-flex">
+                        <input type="search" name="key" class="search-input">
                         <button type="submit" class="btn search-btn"></button>
                     </form>
                     <div class="languages">

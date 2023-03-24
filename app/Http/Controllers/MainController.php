@@ -36,4 +36,15 @@ class MainController extends Controller
     {
         return view('contact');
     }
+
+    public function search(Request $request)
+    {
+        $key=$request->key;
+        $posts=Post::where('title_uz','like','%'.$key.'%')
+            ->orWhere('title_ru','like','%'.$key.'%')
+            ->orWhere('body_uz','like','%'.$key.'%')
+            ->orWhere('body_ru','like','%'.$key.'%')
+            ->get();
+        return view('search',compact('posts','key'));
+    }
 }
