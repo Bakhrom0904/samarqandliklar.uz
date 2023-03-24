@@ -58,6 +58,13 @@
                             </select>
                             <input type="text" name="slug" class="form-control">
                         </div>
+                        <div class="form-group">
+                            <div class="control-label">is Special ?</div>
+                            <label class="custom-switch mt-2">
+                                <input type="checkbox" name="is_special" value="1" class="custom-switch-input">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </div>
                     </div>
                     <div class="card-footer text-right">
                         <button class="btn btn-primary mr-1" type="submit">Submit</button>
