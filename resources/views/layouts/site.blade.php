@@ -63,6 +63,7 @@
                     @foreach($categories as $category)
                         <li class="menu__item"><a href="{{route('categoryPosts',$category->slug)}}">{{$category['name_'.\App::getLocale()]}}</a></li>
                     @endforeach
+                        <li class="menu__item"><a href="{{route('contact')}}">Bog'lanish</a></li>
                 </ul>
             </nav>
             <div class="advertisement-box">

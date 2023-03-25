@@ -11,21 +11,22 @@
                 <div class="form__wrapper">
                     <h3 class="form__wrapper-title">Напишите нам
                     </h3>
-                    <form method="GET">
+                    {{ session('message') }}
+                    <form method="POST" action="{{ route('sendMail') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="form__top">
-                            <label><input type="text" placeholder="Имя" required></label>
-                            <label><input type="email" placeholder="Электронная почта" required></label>
-                            <label><input type="text" placeholder="Номер телефона" required></label>
-                            <label><input type="text" placeholder="Тема" required></label>
-                            <textarea class="contact-tetxarea" placeholder="Текст" required></textarea>
+                            <label><input type="text" placeholder="Имя" name="name" required></label>
+                            <label><input type="email" placeholder="Электронная почта" name="email" ></label>
+                            <label><input type="text" placeholder="Номер телефона" name="phone" required></label>
+                            <textarea class="contact-tetxarea" placeholder="Текст" name="message" required></textarea>
                         </div>
                         <div class="form__bottom">
                             <input type="file" name="file" id="file" class="inputfile">
                             <label for="file" class="basic-flex">Прикрепить файл</label>
                             <label class="basic-flex verification-code-wrapper">
-                                <input type="text" placeholder="Код" required>
-                                <span class="verification-code">4 k 7 Z a</span>
-                            </label>
+{{--                                <input type="text" placeholder="Код" required>--}}
+{{--                                <span class="verification-code">4 k 7 Z a</span>--}}
+{{--                            </label>--}}
                             <button type="submit" class="btn send-btn">Отправить</button>
                         </div>
                     </form>

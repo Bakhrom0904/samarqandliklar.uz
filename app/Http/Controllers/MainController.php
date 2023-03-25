@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Mail;
+use App\Mail\Message;
 
 class MainController extends Controller
 {
@@ -35,6 +37,14 @@ class MainController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+    public function sendMail(Request $request)
+    {
+        $data=$request->all();
+
+        Mail::to('bahromislomov3376@gmail.com')->send(new Message($data));
+        return back()->with('message','Malumot yuborildi');
     }
 
     public function search(Request $request)
