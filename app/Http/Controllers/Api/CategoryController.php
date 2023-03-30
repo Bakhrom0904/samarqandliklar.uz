@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Str;
 
 class CategoryController extends Controller
 {
@@ -27,7 +28,9 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        $requestData=$request->all();
+        $requestData['slug']=Str::slug($requestData['name_uz']);
+        return Category::create($requestData);
     }
 
     /**
