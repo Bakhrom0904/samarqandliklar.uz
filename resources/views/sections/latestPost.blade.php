@@ -27,10 +27,10 @@
 </section>
 
 <div class="apps-block container basic-flex">
-    <div class="apps-block__image"></div>
+{{--    <div class="apps-block__image"></div>--}}
     <div class="apps-block__content">
         <h4>Всегда будьте в курсе последних новостей!</h4>
-        <p>Установите мобильное приложение NAMANGANLIKLAR24 и все новости в вашем кармане!</p>
+        <p>Установите мобильное приложение Samarqandliklar и все новости в вашем кармане!</p>
     </div>
     <div class="apps-block__links basic-flex">
         <div class="links__item">

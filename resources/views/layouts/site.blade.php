@@ -21,8 +21,8 @@
     <header class="main-header">
         <div class="container">
             <div class="basic-flex header__top">
-                <a href="#" class="logo">
-                    <img src="/img/logo.png" alt="NAMANGANLIKLAR24">
+                <a href="/" class="logo">
+                    <img src="/img/logo5.jpg" alt="Samarqandliklar">
                 </a>
                 <div class="currencies basic-flex">
                     <div class="currency"><span>$</span><span>10137.2 </span></div>
@@ -48,7 +48,7 @@
                         @endif
                     </div>
                     <div class="telegram-join basic-flex">
-                        <a href="#"><img src="/img/tg.png" alt="Telegram">Подписатся {{\App::getLocale()}}</a>
+                        <a href="https://t.me/+UvFBjH1FoqNjNWQy"><img src="/img/tg.png" alt="Telegram">Подписатся</a>
                     </div>
                 </div>
             </div>
@@ -110,10 +110,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__top basic-flex">
-                <a href="#" class="footer_logo"><img src="img/logo-blue.png" alt="NAMANGANLIKLAR24"></a>
+                <a href="/" class="footer_logo"><img src="/img/logo5.jpg" alt="Samarqandliklar"></a>
                 <div class="join-telegram-wrapper basic-flex">
                     <p>Подписывайтесь на наш канал в Telegram и будьте всегда в курсе самых последних новостей:</p>
-                    <a href="#" class="join-telegram">Подписатся</a>
+                    <a href="https://t.me/+UvFBjH1FoqNjNWQy" class="join-telegram">Подписатся</a>
                 </div>
             </div>
             <div class="footer__bottom">
