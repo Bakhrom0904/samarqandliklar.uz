@@ -2,7 +2,7 @@
     <div class="container">
         <div class="news__wrapper basic-flex">
             <div class="column-news">
-                <h2 class="news__title">Последние новости</h2>
+                <h2 class="news__title">@lang('words.So’nggi yangiliklar')</h2>
                 <ul class="news__list basic-flex">
                     @foreach($latestPosts as $latest)
                         <li class="news__item">
@@ -19,7 +19,7 @@
                         </li>
                     @endforeach
                 </ul>
-                <button type="button" class="btn load-more-btn">Больше новостей</button>
+                <button type="button" class="btn load-more-btn">@lang('words.Koproq yangiliklar')</button>
             </div>
           @include('sections.popularPosts')
         </div>
@@ -27,17 +27,17 @@
 </section>
 
 <div class="apps-block container basic-flex">
-{{--    <div class="apps-block__image"></div>--}}
+    <div class="apps-block__image"></div>
     <div class="apps-block__content">
-        <h4>Всегда будьте в курсе последних новостей!</h4>
-        <p>Установите мобильное приложение Samarqandliklar и все новости в вашем кармане!</p>
+        <h4>@lang('words.Android app')</h4>
+        <p>@lang('words.Ios app')</p>
     </div>
     <div class="apps-block__links basic-flex">
         <div class="links__item">
-            <a href="#"><img src="img/googleplay.png" alt="googleplay"></a>
+            <a href="/"><img src="img/googleplay.png" alt="googleplay"></a>
         </div>
         <div class="links__item">
-            <a href="#"><img src="img/appstore.png" alt="googleplay"></a>
+            <a href="/"><img src="img/appstore.png" alt="googleplay"></a>
         </div>
     </div>
 </div>

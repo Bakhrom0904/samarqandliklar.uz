@@ -1,6 +1,6 @@
 <div class="popular-news">
     <div class="popular-news-wrapper">
-        <h4 class="popular-news__title">Cамые популярные новости</h4>
+        <h4 class="popular-news__title">@lang('words.Eng ommabop yangiliklar')</h4>
         <ul class="popular-news__list">
             @foreach($popularPosts as $popularPost)
                 <li class="popular-news__item">
@@ -13,6 +13,6 @@
         </ul>
     </div>
     <div class="ads-placeholder">
-        <h4>ADS PLACEHOLDER</h4>
+{{--        <h4>@lang('words.reklama2')</h4>--}}
     </div>
 </div>

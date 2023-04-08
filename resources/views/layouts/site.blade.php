@@ -25,9 +25,9 @@
                     <img src="/img/logo5.jpg" alt="Samarqandliklar">
                 </a>
                 <div class="currencies basic-flex">
-                    <div class="currency"><span>$</span><span>10137.2 </span></div>
-                    <div class="currency"><span>P</span><span>138.26</span></div>
-                    <div class="currency"><span>E</span><span>10988.72</span></div>
+                    <div class="currency"><span>$</span><span>{{ $kursData['usd'] }}</span></div>
+                    <div class="currency"><span>P</span><span>{{ $kursData['rub'] }}</span></div>
+                    <div class="currency"><span>E</span><span>{{ $kursData['euro'] }}</span></div>
                 </div>
                 <div class="header__actions basic-flex">
                     <form method="GET" action="{{route('search')}}" class="search-form basic-flex">
@@ -48,26 +48,26 @@
                         @endif
                     </div>
                     <div class="telegram-join basic-flex">
-                        <a href="https://t.me/+UvFBjH1FoqNjNWQy"><img src="/img/tg.png" alt="Telegram">Подписатся</a>
+                        <a href="https://t.me/+UvFBjH1FoqNjNWQy"><img src="/img/tg.png" alt="Telegram">@lang('words.obuna')</a>
                     </div>
                 </div>
             </div>
             <button type="button" class="btn btn-menu"><span class="hamburger"></span></button>
             <nav class="navbar">
                 <div class="currencies-responsive basic-flex">
-                    <div class="currency"><span>$</span><span>10137.2 </span></div>
-                    <div class="currency"><span>P</span><span>138.26</span></div>
-                    <div class="currency"><span>E</span><span>10988.72</span></div>
+                    <div class="currency"><span>$</span><span>{{ $kursData['usd'] }}</span></div>
+                    <div class="currency"><span>P</span><span>{{ $kursData['rub'] }}</span></div>
+                    <div class="currency"><span>E</span><span>{{ $kursData['euro'] }}</span></div>
                 </div>
                 <ul class="navbar__menu basic-flex">
                     @foreach($categories as $category)
                         <li class="menu__item"><a href="{{route('categoryPosts',$category->slug)}}">{{$category['name_'.\App::getLocale()]}}</a></li>
                     @endforeach
-                        <li class="menu__item"><a href="{{route('contact')}}">Bog'lanish</a></li>
+                        <li class="menu__item"><a href="{{route('contact')}}">@lang('words.contact') @endlang</a></li>
                 </ul>
             </nav>
             <div class="advertisement-box">
-                <h4>PLACEHOLDER FOR ADVERTISEMENT</h4>
+                <h4>@lang('words.reklama')</h4>
             </div>
         </div>
     </header>
