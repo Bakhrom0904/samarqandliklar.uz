@@ -6,7 +6,7 @@
                 <li class="popular-news__item">
                     <a href="{{route('postDetail',$popularPost->slug)}}">
                         <p class="popular-news__description">{{$popularPost['title_'.\App::getLocale()]}}</p>
-                        <span class="popular-news__date">{{$popularPost->created_at->format('H:i / d.M.Y')}}</span>
+                        <span class="popular-news__date">{{$popularPost->created_at->format('H:i / d.m.Y')}}</span>
                     </a>
                 </li>
             @endforeach

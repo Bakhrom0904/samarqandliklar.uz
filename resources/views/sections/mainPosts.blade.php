@@ -6,7 +6,7 @@
                     <a href="{{route('postDetail',$post->slug)}}">
                         <img src="/site/images/posts/{{$post->image}}" alt="Image" class="posts__img">
                         <h2 class="posts__title">{{$post['title_'.\App::getLocale()]}}</h2>
-                        <span class="posts__date">{{$post->created_at->format('H:i')}} / {{$post->created_at->format('d.M.Y')}}</span>
+                        <span class="posts__date">{{$post->created_at->format('H:i')}} / {{$post->created_at->format('d.m.Y')}}</span>
                     </a>
                 </li>
             @endforeach

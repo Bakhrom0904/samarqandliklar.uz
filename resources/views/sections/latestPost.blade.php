@@ -13,13 +13,13 @@
                                     <p class="news__description">
                                         {!! \Str::limit($latest['body_'.\App::getLocale()],100) !!}
                                     </p>
-                                    <span class="news__date basic-flex">{{$latest->created_at->format('H:i')}} / {{$latest->created_at->format('d.M.Y')}}</span>
+                                    <span class="news__date basic-flex">{{$latest->created_at->format('H:i')}} / {{$latest->created_at->format('d.m.Y')}}</span>
                                 </div>
                             </a>
                         </li>
                     @endforeach
                 </ul>
-                <button type="button" class="btn load-more-btn">@lang('words.Koproq yangiliklar')</button>
+                <a href="/"><button type="button" class="btn load-more-btn">@lang('words.Koproq yangiliklar')</button></a>
             </div>
           @include('sections.popularPosts')
         </div>

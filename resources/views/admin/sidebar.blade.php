@@ -10,6 +10,17 @@
             <li class="dropdown">
                 <a href="{{route('admin.dashboard')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
+<!-- 
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                        data-feather="users"></i><span>Administratsiya</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{route('admin.users.index')}}">Users</a></li>
+                    <li><a class="nav-link" href="widget-data.html">Roles</a></li>
+                    <li><a class="nav-link" href="widget-data.html">Permissions</a></li>
+                </ul>
+            </li> -->
+
             <li class="dropdown">
                 <a href="{{route('admin.categories.index')}}" class="nav-link"><i data-feather="monitor"></i><span>Categories</span></a>
             </li>
