@@ -7,7 +7,7 @@
                     @foreach($latestPosts as $latest)
                         <li class="news__item">
                             <a href="{{route('postDetail',$latest->slug)}}" class="basic-flex news__link">
-                                <div class="news-image-wrapper"><img src="img/bottom1.png" alt="Bottom Img"></div>
+                                <div class="news-image-wrapper"><img src="/site/images/posts/{{$latest->image}}" alt="Bottom Img"></div>
                                 <div class="news-box basic-flex">
                                     <h4 class="news__title">{{$latest['title_'.\App::getLocale()]}}</h4>
                                     <p class="news__description">

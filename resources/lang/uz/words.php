@@ -30,7 +30,15 @@ return
         'yuborish'=>'Yuborish',
         'ism'=>'Ism',
         'phone'=>'Telefon raqam',
-        'text'=>'Matn'
+        'text'=>'Matn',
+        'Views'=>'Ko\'rishlar',
+        'tema'=>'Mavzuga oid yangiliklar',
+        'statistika'=>'Samarqand viloyati statistika',
+        'Population'=>'Aholisi',
+        'subdistricts'=>'Tumanlar',
+        'Towns'=>'Shaharlar',
+
+
         
 
 

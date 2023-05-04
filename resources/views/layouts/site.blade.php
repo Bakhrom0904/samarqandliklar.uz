@@ -7,15 +7,6 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
 <body>
-{{--<div class="layer">--}}
-{{--    <div class="modal-box basic-flex">--}}
-{{--        <button type="button" class="btn hide-modal-btn">x</button>--}}
-{{--        <h4>Подписывайтесь на наш канал в Telegram и будьте всегда в курсе самых последних новостей:</h4>--}}
-{{--        <div class="telegram-join  basic-flex">--}}
-{{--            <a href="#"><img src="img/tg.png" alt="Telegram">Подписатся</a>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
 <div class="menu-mask"></div>
 <main>
     <header class="main-header">
@@ -75,33 +66,26 @@
     <div class="container">
         <div class="covid-block basic-flex ">
             <div class="covid-block__title basic-flex">
-                <div class="covid-title__img"></div>
-                <a href="#" class="covid-title__text">Коронавирус COVID-19
-                    в Узбекистане</a>
+                <a href="#" class="covid-title__text">@lang('words.statistika')</a>
             </div>
-            <div class="covid-block__stats basic-flex">
                 <div class="stats__item basic-flex">
-                    <div class="stats__img"></div>
                     <div class="stats-text-box">
-                        <h4>Инфицированы</h4>
-                        <p>3000</p>
+                        <h4>@lang('words.Population')</h4>
+                        <p>4177015</p>
                     </div>
                 </div>
                 <div class="stats__item basic-flex">
-                    <div class="stats__img"></div>
                     <div class="stats-text-box">
-                        <h4>Выздоровели</h4>
-                        <p>2438</p>
+                        <h4>@lang('words.subdistricts')</h4>
+                        <p>14</p>
                     </div>
                 </div>
                 <div class="stats__item basic-flex">
-                    <div class="stats__img"></div>
                     <div class="stats-text-box">
-                        <h4>Умерли</h4>
-                        <p>12</p>
+                        <h4>@lang('words.Towns')</h4>
+                        <p>2</p>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 
