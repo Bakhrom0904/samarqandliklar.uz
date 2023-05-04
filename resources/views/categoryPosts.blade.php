@@ -20,7 +20,7 @@
                                     <div class="news-box basic-flex">
                                         <h4 class="news__title">{{$post['title_'.\App::getLocale()]}}</h4>
                                         <p class="news__description">{!! \Str::limit($post['body_'.\App::getLocale()],100)!!}</p>
-                                        <span class="news__date basic-flex">{{$post->created_at->format('H:i / d.M.Y')}}</span>
+                                        <span class="news__date basic-flex">{{$post->created_at->format('H:i / d.m.Y')}}</span>
                                     </div>
                                 </a>
                             </li>
