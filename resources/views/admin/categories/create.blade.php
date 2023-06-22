@@ -18,11 +18,13 @@
             <div class="card-body">
                 <div class="form-group">
                     <label>Name (UZ)</label>
-                    <input type="text" name="name_uz" class="form-control">
+                    <input type="text" name="name_uz" class="form-control @error('name_uz') is-invalid @enderror">
+                    @error('name_uz') <div class="invalid-feedback">{{ $message }}</div>@enderror
                 </div>
                 <div class="form-group">
                     <label>Name (RU)</label>
-                    <input type="text" name="name_ru" class="form-control">
+                    <input type="text" name="name_ru" class="form-control @error('name_ru') is-invalid @enderror">
+                    @error('name_ru') <div class="invalid-feedback">{{ $message }}</div>@enderror
                 </div>
                 <div class="form-group">
                     <label>Meta title</label>

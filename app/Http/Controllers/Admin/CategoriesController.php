@@ -41,6 +41,7 @@ class CategoriesController extends Controller
             'name_uz'=>'required',
             'name_ru'=>'required',
         ]);
+        
         $requestData=$request->all();
         $requestData['slug']=\Str::slug($requestData['name_uz']);
         Category::create($requestData);
