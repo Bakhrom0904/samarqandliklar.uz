@@ -113,7 +113,7 @@
                 </ul>
                 <ul class="footer-menu">
                     <li class="footer-menu__item"><a href="/" class="footer-menu__link">@lang('words.Malumotlardan foydalanish')</a></li>
-                    <li class="footer-menu__item"><a href="/" class="footer-menu__link">@lang('words.Bizning jamoa')</a></li>
+                    <li class="footer-menu__item"><a href="tel:+998979072966" class="footer-menu__link">Tel: +998979072966</a></li>
                 </ul>
             </div>
         </div>
