@@ -43,7 +43,7 @@ class MainController extends Controller
     {
         $data=$request->all();
 
-        Mail::to('bahromislomov0409@gmail.com')->send(new Message($data));
+        Mail::to('bahromislomov3376@gmail.com')->send(new Message($data));
         return back()->with('message','Sizning xabaringiz muvvafiqiyatli yuborildi');
     }
 
