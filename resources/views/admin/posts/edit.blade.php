@@ -1,9 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-
-    Create Post
-
+    Edit Post
 @endsection
 @section('css')
     <link rel="stylesheet" href="/admin/assets/bundles/select2/dist/css/select2.min.css">
@@ -39,17 +37,22 @@
                         <div class="form-group">
                             <label>Image</label>
                             <input type="file" name="image" class="form-control">
-                            <img src="/site/images/posts/{{$post->image}}" alt="">
+                            <img src="/site/images/posts/{{$post->image}}" alt="" width="200">
                         </div>
                         <div class="form-group">
                             <label>Category</label>
                             <select id="" class="form-control" name="category_id">
-                                <option ">Select category</option>
                                 @foreach($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->name_uz}}</option>
+                                    <option {{ $post->category_id==$category->id ? 'selected' : '' }} value="{{$category->id}}">{{$category->name_uz}}</option>
                                 @endforeach
                             </select>
-                            <input type="text" name="slug" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">is Special ?</div>
+                            <label class="custom-switch mt-2">
+                                <input type="checkbox" name="is_special" value="1" {{ $post->is_special==1 ? 'checked' : '' }} class="custom-switch-input">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
                         </div>
 {{--                        <div class="form-group">--}}
 {{--                            <label>Tags</label>--}}

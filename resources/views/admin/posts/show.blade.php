@@ -30,6 +30,9 @@
                                 <th>Category</th><td>{!! $post->category->name_uz !!}</td>
                             </tr>
                             <tr>
+                                <th>View</th><td>{{ $post->view }}</td>
+                            </tr>
+                            <tr>
                                 <th>Tags</th><td>@foreach($post->tags as $tag)
                                         {{$tag->name_uz}},
                                 @endforeach</td>

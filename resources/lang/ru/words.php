@@ -37,6 +37,8 @@ return
         'Population'=>'Население',
         'subdistricts'=>'Районы',
         'Towns'=>'Города',
+        'file'=>'Выберите файл',
+
 
         
 

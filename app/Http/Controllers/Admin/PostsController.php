@@ -89,7 +89,21 @@ class PostsController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        $request->validate([
+            'title_uz'=>'required',
+            'title_ru'=>'required',
+            'category_id'=>'required',
+            'body_uz'=>'required',
+            'body_ru'=>'required',
+        ]);
+        
         $requestData=$request->all();
+
+         if(empty($request->is_special))
+        {
+            $requestData['is_special']=0;
+        }
+
         if($request->hasFile('image'))
         {
             $file=$request->file('image');

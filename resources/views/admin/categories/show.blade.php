@@ -31,7 +31,7 @@
                                     <th>Slug</th><td>{{$category->slug}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Craeated_at</th><td>{{$category->created_at}}</td>
+                                    <th>Craeated_at</th><td>{{date("d-m-Y H:i", strtotime($category->created_at))}}</td>
                                 </tr>
                             </table>
                         </div>

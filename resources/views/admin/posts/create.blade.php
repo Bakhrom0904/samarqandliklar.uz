@@ -47,7 +47,6 @@
                                     <option value="{{$category->id}}">{{$category->name_uz}}</option>
                                 @endforeach
                             </select>
-                            <input type="text" name="slug" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Tags</label>
@@ -56,7 +55,6 @@
                                     <option value="{{$tag->id}}">{{$tag->name_uz}}</option>
                                 @endforeach
                             </select>
-                            <input type="text" name="slug" class="form-control">
                         </div>
                         <div class="form-group">
                             <div class="control-label">is Special ?</div>

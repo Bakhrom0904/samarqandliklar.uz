@@ -31,9 +31,11 @@ Route::post('/contact',[MainController::class,'sendMail'])->name('sendMail');
 Route::get('/search',[MainController::class,'search'])->name('search');
 
 Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function (){
+
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+    
     Route::resource('categories',CategoriesController::class);
     Route::resource('posts',PostsController::class);
     Route::resource('tags',TagsController::class);

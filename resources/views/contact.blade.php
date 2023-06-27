@@ -11,7 +11,11 @@
                 <div class="form__wrapper">
                     <h3 class="form__wrapper-title">@lang('words.Bizga yozing')
                     </h3>
-                    {{ session('message') }}
+                    @if(session('message'))
+                    <div class="alert alert-success">
+                        {{session('message')}}
+                    </div>
+                    @endif
                     <form method="POST" action="{{ route('sendMail') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form__top">
@@ -22,11 +26,11 @@
                         </div>
                         <div class="form__bottom">
                             <!-- <input type="file" name="file" id="file" class="inputfile">
-                            <label for="file" class="basic-flex">Прикрепить файл</label>
-                            <label class="basic-flex verification-code-wrapper">
-{{--                                <input type="text" placeholder="Код" required>--}}
-{{--                                <span class="verification-code">4 k 7 Z a</span>--}}
-{{--                            </label>--}} -->
+                            <label for="file" class="basic-flex">@lang('words.file')</label> -->
+                            <!-- <label class="basic-flex verification-code-wrapper">
+                                <input type="text" placeholder="Код" required>
+                                <span class="verification-code">4 k 7 Z a</span>
+                            </label> -->
                             <button type="submit" class="btn send-btn">@lang('words.yuborish')</button>
                         </div>
                     </form>

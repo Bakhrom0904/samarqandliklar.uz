@@ -37,6 +37,7 @@ return
         'Population'=>'Aholisi',
         'subdistricts'=>'Tumanlar',
         'Towns'=>'Shaharlar',
+        'file'=>'File tanlang',
 
 
         

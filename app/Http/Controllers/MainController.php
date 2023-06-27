@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 use Mail;
 use App\Mail\Message;
 
@@ -43,8 +43,8 @@ class MainController extends Controller
     {
         $data=$request->all();
 
-        Mail::to('bahromislomov3376@gmail.com')->send(new Message($data));
-        return back()->with('message','Malumot yuborildi');
+        Mail::to('bahromislomov0409@gmail.com')->send(new Message($data));
+        return back()->with('message','Sizning xabaringiz muvvafiqiyatli yuborildi');
     }
 
     public function search(Request $request)
