@@ -20,7 +20,7 @@
                         @csrf
                         <div class="form__top">
                             <label><input type="text" placeholder="@lang('words.ism')" name="name" required></label>
-                            <label><input type="email" placeholder="@lang('words.Elektron pochta')" name="email" required></label>
+                            <label><input type="email" placeholder="@lang('words.Elektron pochta')" name="email"></label>
                             <label><input type="text" placeholder="@lang('words.phone')" name="phone" required></label>
                             <textarea class="contact-tetxarea" placeholder="@lang('words.text')" name="message" required></textarea>
                         </div>
