@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\PostsController;
 use App\Http\Controllers\Admin\TagsController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,14 +28,12 @@ Route::get('/',[MainController::class,'index']);
 Route::get('/category/{slug}',[MainController::class,'categoryPosts'])->name('categoryPosts');
 Route::get('/posts/{slug}',[MainController::class,'postDetail'])->name('postDetail');
 Route::get('/contact',[MainController::class,'contact'])->name('contact');
-Route::post('/contact',[MainController::class,'sendMail'])->name('sendMail');
+Route::post('/contact',[MainController::class,'store'])->name('store');
 Route::get('/search',[MainController::class,'search'])->name('search');
 
 Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function (){
 
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     
     Route::resource('categories',CategoriesController::class);
     Route::resource('posts',PostsController::class);

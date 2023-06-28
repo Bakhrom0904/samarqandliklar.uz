@@ -7,6 +7,7 @@ use App\Models\Post;
 use Illuminate\Http\Request; 
 use Mail;
 use App\Mail\Message;
+use App\Models\Contact;
 
 class MainController extends Controller
 {
@@ -34,11 +35,6 @@ class MainController extends Controller
         return view('postDetail',compact('post','otherPosts'));
     }
 
-    public function contact()
-    {
-        return view('contact');
-    }
-
     public function sendMail(Request $request)
     {
         $data=$request->all();
@@ -56,5 +52,18 @@ class MainController extends Controller
             ->orWhere('body_ru','like','%'.$key.'%')
             ->get();
         return view('search',compact('posts','key'));
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function store(Request $request)
+    {
+        $requestData=$request->all();
+        Contact::create($requestData);
+
+        return back()->with('message','Sizning xabarining muvvafiqiyatli yuborildi');
     }
 }

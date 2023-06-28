@@ -27,7 +27,7 @@
                             <thead>
                             <tr>
                                 <th>T/R</th>
-                                <th>Title</th>
+                                <th>Title_UZ</th>
                                 <th>Category</th>
                                 <th>Image</th>
                             </tr>
@@ -56,11 +56,11 @@
                         </table>
                     </div>
                 </div>
-{{--                <div class="card-footer text-right">--}}
-{{--                    <nav class="d-inline-block">--}}
-{{--                        {{$categories->links()}}--}}
-{{--                    </nav>--}}
-{{--                </div>--}}
+                <div class="card-footer text-right">
+                    <nav class="d-inline-block">
+                        {{$posts->links()}}
+                    </nav>
+                </div>
             </div>
         </div>
     </div>

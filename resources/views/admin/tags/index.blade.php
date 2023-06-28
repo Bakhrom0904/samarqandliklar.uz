@@ -7,61 +7,60 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-12 col-md-12 col-lg-12">
-            <div class="card">
-                @if(session('success'))
-                    <div class="alert alert-success">
-                        {{session('success')}}
-                    </div>
-                @endif
-                <div class="card-header">
-                    <h4>Tags</h4>
-                    <div class="card-header-form">
-                        <a href="{{route('admin.tags.create')}}" class="btn btn-primary">Create</a>
-                    </div>
+<div class="row">
+    <div class="col-12 col-md-12 col-lg-12">
+        <div class="card">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{session('success')}}
                 </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped" id="table-1">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name (UZ)</th>
-                                <th>Name (RU)</th>
-                                <th>Slug</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($tags as $tag)
-                                <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{$tag->name_uz}}</td>
-                                    <td>{{$tag->name_ru}}</td>
-                                    <td>{{$tag->slug}}</td>
-                                    <td>
-                                        <a href="{{route('admin.tags.edit',$tag->id)}}" class="btn btn-primary">Edit</a>
-                                        <form action="{{route('admin.tags.destroy',$tag->id)}}" method="POST">
-                                            @method('DELETE')
-                                            @csrf
-                                            <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Confirm delete')">
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+            @endif
+            <div class="card-header">
+                <h4>Tags</h4>
+                <div class="card-header-form">
+                    <a href="{{route('admin.tags.create')}}" class="btn btn-primary">Create</a>
                 </div>
-                {{--                <div class="card-footer text-right">--}}
-                {{--                    <nav class="d-inline-block">--}}
-                {{--                        {{$categories->links()}}--}}
-                {{--                    </nav>--}}
-                {{--                </div>--}}
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-md">
+                        <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Name_UZ</th>
+                            <th>Name_RU</th>
+                            <th>Slug</th>
+                            <th>Action</th>
+                        </tr>
+                        @foreach($tags as $tag)
+                        <tr>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$tag->name_uz}}</td>
+                            <td>{{$tag->name_ru}}</td>
+                            <td>{{$tag->slug}}</td>
+                            <td>
+                                <a href="{{route('admin.tags.edit',$tag->id)}}" class="btn btn-primary">Edit</a>
+                                <form action="{{route('admin.tags.destroy',$tag->id)}}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Confirm delete')">
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+
+                        </tbody></table>
+                </div>
+            </div>
+            <div class="card-footer text-right">
+                <nav class="d-inline-block">
+                   {{$tags->links()}}
+                </nav>
             </div>
         </div>
     </div>
+</div>
+
 
 @endsection
 
